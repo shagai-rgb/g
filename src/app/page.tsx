@@ -1,28 +1,11 @@
 /** @format */
 "use client";
-import { useState } from "react";
-import Input from "@/components/Input";
-import Button from "@/components/Button";
 import Card from "@/components/Card";
 import CountdownCard from "@/components/CountdownCard";
 import EventCard from "@/components/EventCard";
 import EventCard2 from "@/components/EventCard2";
 
 export default function Home() {
-  const [username, setUsername] = useState(""); // Хэрэглэгчийн нэр
-  const [password, setPassword] = useState(""); // Нууц үг
-  const [usernameError, setUsernameError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
-
-  const handleSubmit = () => {
-    if (username === "" || password === "") {
-      setUsernameError(username === "");
-      setPasswordError(password === "");
-    } else {
-      console.log("Form submitted");
-    }
-  };
-
   return (
     <div className="flex gap-10 justify-center items-center w-full min-h-screen px-40">
       {/* <Input

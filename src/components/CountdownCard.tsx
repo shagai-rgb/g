@@ -7,7 +7,7 @@ import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CountdownCardProps {
-  title: string;
+  title?: string;
   subtitle?: string;
   discountPercentage?: number;
   leasing?: {
@@ -19,7 +19,7 @@ interface CountdownCardProps {
     max: number;
   };
   finalPrice: number;
-  endDate: Date;
+  endDate?: Date;
   image: string;
   gradient?: string;
   buttonText?: string;
