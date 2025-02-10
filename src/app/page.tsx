@@ -5,6 +5,8 @@ import Input from "@/components/Input";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import CountdownCard from "@/components/CountdownCard";
+import EventCard from "@/components/EventCard";
+import EventCard2 from "@/components/EventCard2";
 
 export default function Home() {
   const [username, setUsername] = useState(""); // Хэрэглэгчийн нэр
@@ -22,7 +24,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex gap-10 justify-center items-center w-full min-h-screen">
+    <div className="flex gap-10 justify-center items-center w-full min-h-screen px-40">
       {/* <Input
           label="Name"
           type="text"
@@ -116,6 +118,38 @@ export default function Home() {
           buttonText="Buy now"
           onButtonClick={() => alert("Захиалсан!")}
         />
+        <div className="flex flex-col gap-2">
+          <EventCard2
+            title="The Perfume Night"
+            textColorMode="light"
+            subtitle="Нэгдсэн шинэ жил"
+            discountPercentage={15}
+            desc="Цөөн суудал үлдлээ"
+            endDate={new Date("2025-02-14T00:00:00")}
+            image="/image copy 5.png"
+            gradient="[gray-500]"
+            buttonText="Buy ticket"
+            onButtonClick={() => alert("Захиалсан!")}
+          />
+          <div className="flex gap-2 ">
+            <EventCard
+              title="BOLD-24 concert"
+              image="image copy 5.png"
+              date="2025.03.08"
+              time="19:00"
+              location="Shangri-La Ballroom"
+              backgroundColor="bg-gray-900"
+            />
+            <EventCard
+              title="BOLD-24 concert"
+              image="image copy 5.png"
+              date="2025.03.08"
+              time="19:00"
+              location="Shangri-La Ballroom"
+              backgroundColor="bg-gray-900"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
