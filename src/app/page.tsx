@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col gap-10 justify-center items-center w-full min-h-screen">
+    <div className="flex gap-10 justify-center items-center w-full min-h-screen">
       {/* <Input
           label="Name"
           type="text"
@@ -70,25 +70,34 @@ export default function Home() {
       >
         Click me!
       </Button>
+      {/* size ni lg baihad bolno yvtsdaa harj baigaad uurchilnu */}
       <Card
-        title="Thunder ch ymu "
-        content="hha"
-        image="image.png"
-        background="gray"
-        price={231}
-        textColor="white"
         size="lg"
+        title="Thunder ch ymu"
+        image="image copy 2.png"
+        imageSize="full"
+        background="gray"
+        price={3000000}
+        textColor="white"
         border="rounded"
         hoverEffect
-        footer
-        Logo=""
+        rating={2}
+        logo="/image copy.png"
+        onSale
       />
       <Card
-        image="image.png"
-        title="test"
-        content={""}
+        size="lg"
+        title="Cake"
+        image="image copy 3.png"
+        imageSize="md"
+        background="white"
+        price={3000000}
+        textColor="black"
         border="rounded"
-        background="gray"
+        hoverEffect
+        rating={4}
+        logo="/image copy.png"
+        onSale
       />
     </div>
   );

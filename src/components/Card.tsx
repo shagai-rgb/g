@@ -2,12 +2,12 @@
 
 import React from "react";
 import clsx from "clsx";
+import { Star } from "lucide-react";
 
 interface CardProps {
   title: string;
-  content: string;
-  footer?: React.ReactNode;
   image?: string;
+  imageSize?: "sm" | "md" | "lg" | "full";
   background?: "white" | "gray" | "black";
   textColor?: "black" | "white" | "gray";
   size?: "sm" | "md" | "lg";
@@ -16,14 +16,18 @@ interface CardProps {
   rating?: number;
   price?: string | number;
   onSale?: boolean;
-  Logo?: string;
+  logo?: string;
 }
+
+const formatPrice = (price: string | number) => {
+  return typeof price === "number" ? price.toLocaleString("MGL") + "₮" : price;
+};
 
 const Card: React.FC<CardProps> = ({
   title,
-  content,
-  footer,
+  imageSize = "md",
   image,
+  logo,
   background = "white",
   textColor = "black",
   size = "md",
@@ -32,8 +36,13 @@ const Card: React.FC<CardProps> = ({
   rating = 0,
   price,
   onSale = false,
-  logo,
 }) => {
+  const imageSizeStyles = {
+    sm: "h-32 ",
+    md: "h-[250px] w-full px-5",
+    lg: "h-full w-full",
+    full: "rounded-full h-[250px]",
+  };
   const backgroundStyles = {
     white: "bg-white",
     gray: "bg-gray-800",
@@ -58,17 +67,17 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       className={clsx(
-        "overflow-hidden transition-all p-4",
+        "overflow-hidden transition-all cursor-pointer p-2",
         backgroundStyles[background],
         textColorStyles[textColor],
         sizeStyles[size],
         borderStyles[border],
-        hoverEffect && "hover:scale-105 hover:shadow-xl"
+        hoverEffect && "hover:scale-105 shadow-xl"
       )}
     >
       <div className="flex items-center justify-between px-2">
         {onSale && (
-          <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+          <span className="bg-[#811AE0] text-white text-sm font-semibold px-6 py-1 rounded-md cursor-pointer">
             On Sale
           </span>
         )}
@@ -77,33 +86,32 @@ const Card: React.FC<CardProps> = ({
         )}
       </div>
       {image && (
-        <div className="w-full h-60 overflow-hidden mt-2">
+        <div
+          className={clsx(
+            "w-full overflow-hidden mt-2 text-center",
+            imageSizeStyles[imageSize]
+          )}
+        >
           <img src={image} alt={title} className="w-full h-full object-cover" />
         </div>
       )}
-      <div className="p-2 text-center">
-        <h2 className="font-semibold mb-1">{title}</h2>
-        <p className="text-sm mb-2">{content}</p>
-        <div className="flex justify-center gap-1 mb-2">
+      <div className="flex flex-col justify-end p-2 text-center ">
+        <div className="font-semibold text-center">{title}</div>
+        <div className="flex justify-center text-center p-1 gap-1">
           {[...Array(5)].map((_, i) => (
-            <div
+            <Star
               key={i}
               className={clsx(
                 "h-4 w-4",
-                i < rating
-                  ? "fill-yellow-400 text-yellow-400"
-                  : "fill-gray-500 text-gray-500"
+                i < rating ? "text-yellow-400" : "text-gray-500"
               )}
+              fill={i < rating ? "#FACC15" : "#9CA3AF"}
             />
           ))}
         </div>
-        {price && (
-          <p className="text-lg font-bold">
-            {typeof price === "number" ? price + "₮" : price}
-          </p>
-        )}
-        {footer && <div className="mt-4">{footer}</div>}
-      </div>
+
+        {price && <p className="text-lg font-bold">{formatPrice(price)}</p>}
+      </div>{" "}
     </div>
   );
 };
