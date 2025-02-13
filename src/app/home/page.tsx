@@ -1,11 +1,15 @@
 /** @format */
 "use client";
+import { BannerCarousel } from "@/components/banner-carousel/BannerCarousel";
 import { Banner2 } from "@/components/banner/Banner2";
-import { Banner3 } from "@/components/banner3/Banner3";
+import CreateEvent from "@/components/create-event/CreateEvent";
 import { Events } from "@/components/eventAndConcert/Events";
 import FavoriteArtist from "@/components/favorite-artist/FavoriteArtists";
 import FavoriteProduct from "@/components/favoriteProduct/FavoriteProduct";
 import FavoriteService from "@/components/favoriteService.tsx/FavoriteService";
+import Footer from "@/components/footer";
+import { Header } from "@/components/header/header";
+import VideoToturial from "@/components/video-toturial/VideoToturial";
 
 interface artistdataType {
   title: string;
@@ -222,17 +226,171 @@ const servicedata: artistdataType[] = [
     logo: "/image copy.png",
     onSale: true,
   },
+  {
+    size: "lg",
+    title: "Гүзээлзгэнэтэй бялуу",
+    image: "image copy 3.png",
+    imageSize: "md",
+    background: "white",
+    price: "50,000₮ - 150,000₮",
+    textColor: "black",
+    border: "rounded",
+    hoverEffect: true,
+    rating: 4,
+    logo: "/image copy.png",
+    onSale: true,
+  },
+  {
+    size: "lg",
+    title: "Гүзээлзгэнэтэй бялуу",
+    image: "image copy 3.png",
+    imageSize: "md",
+    background: "white",
+    price: "50,000₮ - 150,000₮",
+    textColor: "black",
+    border: "rounded",
+    hoverEffect: true,
+    rating: 4,
+    logo: "/image copy.png",
+    onSale: true,
+  },
+  {
+    size: "lg",
+    title: "Гүзээлзгэнэтэй бялуу",
+    image: "image copy 3.png",
+    imageSize: "md",
+    background: "white",
+    price: "50,000₮ - 150,000₮",
+    textColor: "black",
+    border: "rounded",
+    hoverEffect: true,
+    rating: 4,
+    logo: "/image copy.png",
+    onSale: true,
+  },
+];
+
+const eventData: artistdataType[] = [
+  {
+    size: "lg",
+    title: "Thunder ch ymu",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    price: 3000000,
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
+  {
+    size: "lg",
+    title: "Thunder ch ymu",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    price: 3000000,
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
+  {
+    size: "lg",
+    title: "Thunder ch ymu",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    price: 3000000,
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
+  {
+    size: "lg",
+    title: "Thunder ch ymu",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    price: 3000000,
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
+];
+const videoData: artistdataType[] = [
+  {
+    size: "md",
+    title: "Өөрийн эвент үүсгэх заавар",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
+  {
+    size: "md",
+    title: "Өөрийн эвент үүсгэх заавар",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
+  {
+    size: "md",
+    title: "Өөрийн эвент үүсгэх заавар",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
+  {
+    size: "md",
+    title: "Өөрийн эвент үүсгэх заавар",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
+  {
+    size: "md",
+    title: "Өөрийн эвент үүсгэх заавар",
+    image: "image.png",
+    imageSize: "md",
+    background: "gray",
+    textColor: "white",
+    border: "rounded",
+    hoverEffect: true,
+    onSale: false,
+  },
 ];
 
 const Page = () => {
   return (
     <div className="w-full min-h-screen flex flex-col justify-center">
+      <Header />
+      <BannerCarousel />
+      <VideoToturial videoData={videoData} />
+      <CreateEvent eventData={eventData} />
       <Events />
       <FavoriteArtist artistdata={artistdata} />
       <FavoriteService servicedata={servicedata} />
       <Banner2 />
       <FavoriteProduct productdata={servicedata} />
-      <Banner3 />
+      <Footer />
     </div>
   );
 };

@@ -46,7 +46,11 @@ const Input: React.FC<InputProps> = ({
     <div className="w-full">
       {label && <label className="block mb-1 text-gray-700">{label}</label>}
       <div className="relative flex items-center">
-        {iconLeft && <span className="absolute left-3">{iconLeft}</span>}
+        {iconLeft && (
+          <span className="absolute left-3">
+            <img className="h-4 w-4" src={iconLeft} alt="eye toggle" />
+          </span>
+        )}
         <input
           type={eye ? (showPassword ? "text" : "password") : type}
           disabled={disabled}
