@@ -1,8 +1,5 @@
 import Link from "next/link";
 import {
-  Facebook,
-  Instagram,
-  Youtube,
   Headphones,
   Heart,
   ShoppingCart,
@@ -20,17 +17,6 @@ export default function SiteHeader() {
     <header className="w-full bg-white">
       {/* Top bar */}
       <div className=" bg-gray-100 flex items-center justify-between px-6 py-2 text-sm text-gray-600">
-        <div className="flex items-center gap-4">
-          <Link href="#" className="hover:text-gray-900">
-            <Facebook className="w-5 h-5" />
-          </Link>
-          <Link href="#" className="hover:text-gray-900">
-            <Instagram className="w-5 h-5" />
-          </Link>
-          <Link href="#" className="hover:text-gray-900">
-            <Youtube className="w-5 h-5" />
-          </Link>
-        </div>
         <div className="flex items-center gap-6">
           <Link href="#" className="hover:text-gray-900">
             Хамтран ажиллах
@@ -64,7 +50,13 @@ export default function SiteHeader() {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-6">
+          <select className="block md:hidden">
+            <option value=" support"> support</option>
+            <option value="Миний сагс">Миний сагс</option>
+            <option value="Login">Login</option>
+            <option value="register">register</option>
+          </select>
+          <div className="md:flex items-center gap-6 hidden">
             <Link
               href="#"
               className="flex items-center gap-2 text-sm hover:text-purple-600"
@@ -110,7 +102,15 @@ export default function SiteHeader() {
 
       {/* Navigation */}
       <nav className=" p-6">
-        <ul className="flex items-center gap-8 text-sm">
+        <select className="block md:hidden">
+          <option value=" Үйлчилгээ"> Үйлчилгээ</option>
+          <option value="Бүтээгдэхүүн">Бүтээгдэхүүн</option>
+          <option value="Эвент захиалах">Эвент захиалах</option>
+          <option value="Тасалбар авах">Тасалбар авах</option>
+          <option value="Тасалбар авах">Урлагийн сургалт, багш захиалах</option>
+          <option value="Тасалбар авах">Ресторан захиалах</option>
+        </select>
+        <ul className=" items-center gap-8 text-sm md:flex hidden">
           <li>
             <Link
               href="#"

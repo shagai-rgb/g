@@ -128,27 +128,22 @@ export default function EntertainmentPage() {
             Эвентийн өрөнхий төрлөөс эвент үүсгэх{" "}
           </p>{" "}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-            {" "}
             {events.map((event) => (
               <div
                 key={event.id}
                 className="relative aspect-[7/8] group cursor-pointer overflow-hidden rounded-xl"
               >
-                {" "}
                 <img
                   src={event.imageUrl || "/placeholder.svg"}
                   alt={event.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />{" "}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 flex items-end">
-                  {" "}
-                  <h3 className="text-white font-medium p-6">
-                    {event.title}
-                  </h3>{" "}
-                </div>{" "}
+                  <h3 className="text-white font-medium p-6">{event.title}</h3>
+                </div>
               </div>
-            ))}{" "}
-          </div>{" "}
+            ))}
+          </div>
         </div>{" "}
       </section>{" "}
     </div>
