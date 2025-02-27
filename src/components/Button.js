@@ -1,23 +1,7 @@
-/** @format */
-
 import React from "react";
 import clsx from "clsx";
 
-interface ButtonProps {
-  type?: "link" | "button" | "toggle" | "switch";
-  children: React.ReactNode;
-  color?: "primary" | "secondary" | "danger" | "gray";
-  size?: "sm" | "md" | "lg";
-  border?: "rounded" | "square";
-  effect?: "none" | "transition";
-  hover?: "opacity-80" | "shadow-lg" | "none";
-  error?: boolean;
-  disabled?: boolean;
-  onClick?: () => void;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   type = "button",
   children,
   color = "gray",

@@ -4,33 +4,17 @@ import { useState } from "react";
 import Card from "../Card";
 import { Banner3 } from "../banner3/Banner3";
 
-interface FavoriteProduct {
-  productdata: {
-    title: string;
-    image?: string;
-    imageSize?: "sm" | "md" | "lg" | "full";
-    background?: "white" | "gray" | "black";
-    textColor?: "black" | "white" | "gray";
-    size?: "sm" | "md" | "lg";
-    border?: "none" | "rounded" | "shadow";
-    hoverEffect?: boolean;
-    rating?: number;
-    price?: string | number;
-    onSale?: boolean;
-    logo?: string;
-  }[];
-}
-
-const FavoriteProduct = ({ productdata }: FavoriteProduct) => {
+const FavoriteProduct = ({ productdata }) => {
   const sliceData = productdata.slice(0, 10);
   const [allProduct, setAllProduct] = useState(false);
 
   const HandleClick = () => {
     setAllProduct(!allProduct);
   };
+
   return (
     <div className="w-full bg-gray-200 flex justify-center p-5">
-      <div className="flex max-w-[1500px]  items-center flex-col">
+      <div className="flex max-w-[1500px] items-center flex-col">
         <h1 className="font-bold text-[35px] text-center text-[#200052]">
           Онцлох бүтээгдэхүүн
         </h1>
@@ -90,7 +74,7 @@ const FavoriteProduct = ({ productdata }: FavoriteProduct) => {
                 );
               })}
         </div>
-        <div className="flex flex-wrap w-full  sm:justify-between justify-center gap-3 py-7">
+        <div className="flex flex-wrap w-full sm:justify-between justify-center gap-3 py-7">
           <Banner3 />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3">

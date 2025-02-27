@@ -22,6 +22,32 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/components/banner/Banner2.js",
+    "src/components/banner-carousel/BannerCarousel.js",
+    "src/components/entertainment.js",
+    "src/components/CountdownCard.js",
+    "src/components/video-toturial/VideoToturial.js",
+    "src/components/header/SiteHeader.js",
+    "src/components/header/header.js",
+    "src/components/favoriteService.tsx/FavoriteService.js",
+    "src/components/favoriteProduct/FavoriteProduct.js",
+    "src/components/favorite-artist/FavoriteArtists.js",
+    "src/components/favorite-artist/FavoriteArtists.js",
+    "src/components/eventAndConcert/Events.js",
+    "src/components/create-event/CreateEvent.js",
+    "src/components/banner3/Banner3.js",
+    "src/components/EventCardMd.js",
+    "src/components/EventCard2.js",
+    "src/components/EventCard.js",
+    "src/components/Input.js",
+    "src/components/footer.js",
+    "src/components/Card.js",
+    "src/components/Button.js"
+  ],
   "exclude": ["node_modules"]
 }

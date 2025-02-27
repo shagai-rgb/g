@@ -1,20 +1,7 @@
-/** @format */
-
 import { useState } from "react";
 import clsx from "clsx";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  type?: "text" | "password" | "email" | "number";
-  size?: "sm" | "md" | "lg";
-  variant?: "outlined" | "filled" | "standard";
-  error?: boolean;
-  disabled?: boolean;
-  iconLeft?: React.ReactNode;
-  eye?: boolean;
-}
-
-const Input: React.FC<InputProps> = ({
+const Input = ({
   label,
   type = "text",
   size = "md",

@@ -3,33 +3,17 @@
 import { useState } from "react";
 import Card from "../Card";
 
-interface VideoToturialProps {
-  videoData: {
-    title: string;
-    image?: string;
-    imageSize?: "sm" | "md" | "lg" | "full";
-    background?: "white" | "gray" | "black";
-    textColor?: "black" | "white" | "gray";
-    size?: "sm" | "md" | "lg";
-    border?: "none" | "rounded" | "shadow";
-    hoverEffect?: boolean;
-    rating?: number;
-    price?: string | number;
-    onSale?: boolean;
-    logo?: string;
-  }[];
-}
-
-const VideoToturial = ({ videoData }: VideoToturialProps) => {
+const VideoToturial = ({ videoData }) => {
   const sliceData = videoData.slice(0, 5);
   const [allArtist, setAllArtist] = useState(false);
 
   const HandleClick = () => {
     setAllArtist(!allArtist);
   };
+
   return (
     <div className="w-full bg-white flex justify-center p-5">
-      <div className="flex max-w-[1500px]  items-center flex-col">
+      <div className="flex max-w-[1500px] items-center flex-col">
         <h1 className="font-bold text-[35px] text-center text-[#200052]">
           Видео заавар
         </h1>

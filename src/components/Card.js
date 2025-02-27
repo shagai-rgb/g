@@ -1,29 +1,12 @@
-/** @format */
-
 import React from "react";
 import clsx from "clsx";
 import { Star } from "lucide-react";
 
-interface CardProps {
-  title: string;
-  image?: string;
-  imageSize?: "sm" | "md" | "lg" | "full";
-  background?: "white" | "gray" | "black";
-  textColor?: "black" | "white" | "gray";
-  size?: "sm" | "md" | "lg";
-  border?: "none" | "rounded" | "shadow";
-  hoverEffect?: boolean;
-  rating?: number;
-  price?: string | number;
-  onSale?: boolean;
-  logo?: string;
-}
-
-const formatPrice = (price: string | number) => {
+const formatPrice = (price) => {
   return typeof price === "number" ? price.toLocaleString("MGL") + "₮" : price;
 };
 
-const Card: React.FC<CardProps> = ({
+const Card = ({
   title,
   imageSize = "md",
   image,
@@ -111,7 +94,7 @@ const Card: React.FC<CardProps> = ({
         </div>
 
         {price && <p className="text-lg font-bold">{formatPrice(price)}</p>}
-      </div>{" "}
+      </div>
     </div>
   );
 };
